@@ -1,0 +1,496 @@
+* 
+    box-sizing: border-box
+
+body
+    background-color: #F1F1F1
+    font-family: Roboto
+    color: #000
+
+.attention
+    width: 100%
+    margin: 0 auto
+    padding: 11px
+    background-color: #D8BF95
+    font-family: Roboto
+    font-size: 14px
+    line-height: 17px
+    text-align: center
+
+.container
+    max-width: 1440px
+    margin: 0 auto
+
+.main-nav
+    padding: 25px 30px
+    box-sizing: content-box
+    &__list 
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        align-items: center
+        justify-content: space-between
+        margin: 0
+        padding: 0
+        grid-template-columns: 23% 21% 18% 22% 5% 8% 1%
+        grid-template-rows: 1fr
+    &__item
+        display: grid
+        justify-content: start
+        &_lang
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            align-items: baseline
+            column-gap: 5px
+    &__link
+        font-size: 14px
+        line-height: 17px
+        color: #000
+        text-decoration: none
+        transition: all 1s ease-out
+        &:hover
+            color: #000
+            text-decoration: underline
+            transition: all 1s ease-out
+        &_passive
+            color: #C4C4C4
+
+.main-slider
+    &__link
+        display: grid
+        transition: transform 1s
+        &:hover
+            position: relative
+            transform: scale(1.2);
+    .slick-list
+        overflow: hidden
+    .slick-track
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        margin: 0
+        padding: 0
+        justify-content: center
+        justify-content: center
+        animation: scroll 40s linear infinite
+        &:hover
+            animation-play-state: paused
+    @keyframes scroll
+        0%
+            transform: translateX(0)
+        100%
+            transform: translateX(calc((-1440px/3) * 6))
+    
+.descr
+    position: relative
+    padding: 87px 64px 153px 64px
+    &__title
+        max-width: 892px
+        margin: 0 0 31px 0
+        font-size: 64px
+        line-height: 64px
+        font-weight: normal
+    &__subtitle
+        max-width: 892px
+        margin: 0
+        font-size: 20px
+        line-height: 25px
+        font-weight: normal
+    &__link
+        position: absolute
+        top: 127px
+        right: 64px
+        font-size: 18px
+        line-height: 22px
+        color:  #000
+        text-decoration: none
+        text-transform: uppercase
+        &:hover
+            text-decoration: underline
+
+.shop-slider
+    position: relative
+    padding: 0 64px 110px 64px
+    &__title
+        margin: 0
+        font-size: 24px
+        line-height: 30px
+        font-weight: normal
+    &__list
+        overflow: hidden
+    .slick-track
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        margin: 0
+        justify-content: center
+    .slick-arrow
+        position: absolute
+        top: 0
+        z-index: 10
+        width: 18px
+        height: 10px
+        border: 0
+        font-size: 0
+        cursor: pointer
+    .slick-arrow.slick-prev
+        right: 102px
+        background: url('../img/arrow-left.svg') 0 0 /100% no-repeat
+    .slick-arrow.slick-next
+        right: 64px
+        background: url('../img/arrow-right.svg') 0 0 /100% no-repeat
+    &__item
+        position: relative
+        min-height: 548px
+        display: grid
+        align-items: end
+    &__descr
+        position: absolute
+        top: 60px
+        left: 22px
+        margin: 0
+        font-size: 16px
+        line-height: 22px
+    &__prise
+        position: absolute
+        left: 22px
+        bottom: 0
+        z-index: 10
+        margin: 0
+        font-size: 14px
+        line-height: 17px
+    &__link
+        position: absolute
+        right: 2px
+        bottom: 0
+        font-size: 14px
+        line-height: 17px
+        color:#000
+        text-decoration: none
+        &:hover
+            text-decoration: underline
+
+.photos
+    display: grid
+    overflow: hidden
+    grid-auto-flow: column
+    grid-auto-columns: max-content
+    justify-content: center
+    &__link
+        position: relative
+        color: #000
+    &__img
+        display: grid
+        background: #ade6da
+        &:hover img
+            opacity: .5
+        img
+            opacity: 1
+            transition: .4s ease-in-out    
+    &__title
+        position: absolute
+        top: 47px
+        left: 50px
+        font-size: 44px
+        line-height: 60px
+    &__text
+        position: absolute
+        bottom: 64px
+        left: 50px
+        font-size: 14px
+        line-height: 17px
+    &__hash
+        position: absolute
+        top: 67px
+        left: 50px
+        font-size: 18px
+        line-height: 22px
+
+.categories-slider
+    position: relative
+    padding: 43px 64px 89px 64px
+    &__title
+        margin: 0 0 17px 0
+        font-size: 24px
+        line-height: 30px
+        font-weight: normal
+    &__list
+        overflow: hidden
+    &__item
+        position: relative
+    &__descr
+        position: absolute
+        bottom: 5px
+        left: 20px
+        margin: 0
+        font-size: 33px
+        line-height: 42px
+        color: #fff
+        font-weight: normal
+        text-decoration: none
+    .slick-track
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        margin: 0
+        justify-content: center
+    .slick-slide
+        display: grid
+        justify-items: center
+    .slick-arrow
+        position: absolute
+        top: 70px
+        z-index: 10
+        width: 18px
+        height: 10px
+        border: 0
+        font-size: 0
+        cursor: pointer
+    .slick-arrow.slick-prev
+        right: 102px
+        background: url('../img/arrow-left.svg') 0 0 /100% no-repeat
+    .slick-arrow.slick-next
+        right: 64px
+        background: url('../img/arrow-right.svg') 0 0 /100% no-repeat
+    .slick-dots
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        justify-content: center
+        column-gap: 12px
+        margin: 20px 0 0 0;
+        padding: 0
+        li 
+            list-style: none
+        button
+            padding: 0
+            border: 0
+            border-radius: 0
+            width: 6px
+            height: 6px
+            background: #C4C4C4
+            font-size: 0
+            cursor: pointer
+    .slick-active button
+        background: #000
+
+.book
+    display: grid
+    overflow: hidden
+    grid-auto-flow: column
+    grid-auto-columns: max-content
+    justify-content: center
+    margin-bottom: 127px
+    &__link
+        position: relative
+        color: #000
+    &__img
+        display: grid
+        overflow: hidden;
+        &:hover img
+            transform: scale(1.2);
+        img
+            transition: .4s ease-in-out    
+    &__text
+        position: absolute
+        top: 31px
+        left: 45px
+        font-size: 18px
+        line-height: 22px
+
+.advantage
+    padding: 0 64px 50px 64px
+    &__title
+        max-width: 630px
+        margin: 0 0 63px 0
+        font-size: 43px
+        line-height: 60px
+        font-weight: normal
+    &__list
+        display: grid
+        overflow: hidden
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        justify-content: space-between
+        padding: 0
+        margin: 0
+    &__item 
+        display: grid
+        grid-auto-flow: row
+        // justify-items: center
+        padding: 0
+        list-style: none
+    &__img
+        justify-self: center
+        margin-bottom: 68px
+    &__num
+        margin-bottom: 73px
+        font-size: 30px
+        line-height: 45px
+    &__text
+        max-width: 424px
+        margin-bottom: 55px
+        font-size: 24px
+        line-height: 30px
+    &__link
+        font-size: 18px
+        line-height: 22px
+        color: #000
+        text-decoration: none
+        text-transform: uppercase
+        &:hover
+            text-decoration: underline
+
+.subscribe-slider
+    position: relative
+    margin: 90px auto 60px auto
+    .subscribe-advantage
+        position: absolute
+        top: 80px
+        left: 0
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        justify-content: space-between
+        width: 100%
+        padding: 0 64px
+        margin: 0
+        &__item
+            padding: 0
+            font-size: 18px
+            line-height: 27px
+            color: #fff
+            list-style-type: none
+            text-decoration: none
+    &__item
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            left: 64px
+            bottom: 19px
+            display: block
+            width: 420px
+            height: 1px
+            background: #fff
+    &__title
+        position: absolute
+        top: 297px
+        left: 64px
+        font-size: 46px
+        line-height: 60px
+        color: #fff
+        text-decoration: none
+    &__text
+        position: absolute
+        top: 446px
+        left: 64px
+        font-size: 18px
+        line-height: 22px
+        color: #fff
+        text-decoration: none
+    .slick-list
+        overflow: hidden
+    .slick-track
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        margin: 0
+        justify-content: center
+    .slick-slide
+        display: grid
+        justify-items: center
+    .slick-arrow
+        position: absolute
+        bottom: 31px
+        z-index: 10
+        width: 18px
+        height: 10px
+        border: 0
+        font-size: 0
+        cursor: pointer
+    .slick-arrow.slick-prev
+        left: 64px
+        background: url('../img/arrow-left.svg') 0 0 /100% no-repeat
+    .slick-arrow.slick-next
+        left: 463px
+        background: url('../img/arrow-right.svg') 0 0 /100% no-repeat
+    & .slick-arrow.slick-disabled
+        visibility: hidden
+
+.main-footer
+    padding: 38px 64px 0 64px
+    display: grid
+    align-items: start
+    grid-template-rows: 1fr minmax(85px, auto)
+    grid-template-columns: 52% 17% 17% 14%
+    grid-row-gap: 54px
+    ul
+        &:first-child
+            display: grid
+            grid-template-columns: 50% 50%
+        li:first-child
+            grid-column: 1 / 3
+        &:not(:first-child)
+            li
+                grid-column: 1 / 3
+        &:last-child
+            display: grid
+            grid-column: 1 / 5
+            grid-row: 2 / 3
+            grid-template-rows: 1fr 1fr
+            grid-template-columns: 17% 35% 42% 6%
+            li:first-child
+                grid-column: 1 / 5
+            li:not(:first-child)
+                grid-column: auto
+    &__list
+        display: grid
+        grid-template-columns: 1fr
+        grid-auto-rows: auto
+        padding: 0
+        margin: 0
+    &__item
+        list-style: none
+        margin-bottom: 10px
+    &__link
+        font-size: 16px
+        line-height: 20px
+        color: #000
+        text-decoration: none
+        &:hover
+            text-decoration: underline
+        &_fb, &_inst
+            position: relative
+            top: 10px
+            display: inline-block
+            width: 40px
+            height: 40px
+            margin-right: 11px
+        &_fb
+            background: url('../img/fb.svg') center center no-repeat
+            background-color: #E5E5E5
+        &_inst
+            background: url('../img/inst.svg') center center no-repeat
+            background-color: #E5E5E5
+        &__lg
+            font-size: 14px
+            line-height: 17px
+            color: #000
+            text-decoration: none
+            transition: all 1s ease-out
+            &:hover
+                color: #000
+                text-decoration: underline
+                transition: all 1s ease-out
+            &_passive
+                color: #C4C4C4
+    &__title
+        margin-bottom: 21px
+        font-size: 22px
+        line-height: 29px
+    &__copyright, &__author
+        font-size: 14px
+        line-height: 17px
+        color: #9B9B9B
+
+        
